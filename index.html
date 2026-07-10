@@ -226,6 +226,7 @@
     font-weight:700;
   }
   table.cmp td.gray{ background:#E8E8E8; color:var(--t2); }
+  table.cmp td.green{ color:var(--green); font-weight:700; }
 
   /* insight bar */
   .insight{
@@ -400,6 +401,46 @@
   .stat-box.pos .n{ color:var(--green); }
 
   .flow-table td, .flow-table th{ text-align:center; }
+
+  .goal-card{
+    background:var(--white);
+    border:0.5px solid #E0E0E0;
+    border-radius:10px;
+    padding:12px 14px 14px;
+    position:relative;
+    overflow:hidden;
+  }
+  .goal-card::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:6px;
+    background:var(--yellow);
+  }
+  .goal-card .glabel{
+    font-size:clamp(9px,1vw,12px);
+    font-weight:700; color:var(--t2);
+    margin-bottom:4px;
+  }
+  .goal-card .gvalues{
+    font-size:clamp(15px,2vw,22px);
+    font-weight:800; color:var(--t1);
+    margin-bottom:2px;
+  }
+  .goal-card .gvalues .of-target{
+    font-size:0.42em; font-weight:400; color:var(--t3);
+  }
+  .goal-bar-track{
+    width:100%; height:7px; border-radius:5px;
+    background:#EDEDED; margin:8px 0 6px; overflow:hidden;
+  }
+  .goal-bar-fill{ height:100%; border-radius:5px; background:var(--black); }
+  .goal-bar-fill.good{ background:var(--green); }
+  .goal-bar-fill.bad{ background:var(--red); }
+  .goal-foot{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:clamp(7.5px,0.85vw,9.5px); color:var(--t3); font-weight:600;
+  }
+  .goal-foot .pct.good{ color:var(--green); }
+  .goal-foot .pct.bad{ color:var(--red); }
   .flow-table td:first-child, .flow-table th:first-child{ text-align:left; }
 
   .placeholder-box{
@@ -468,6 +509,257 @@ slides.push(`
   <div class="dark-hero foot">Preparado por ADCOM &middot; Fuente de datos: DataReportal / Kepios / GWI / Similarweb, Digital 2026</div>
 </div>`);
 
+/* ---------- SLIDE INDICE ---------- */
+slides.push(`
+<div class="slide">
+  ${header("<b>Indice</b>")}
+  <div class="subtitle">Contenido de la propuesta.</div>
+  <div class="content">
+    <div class="cols">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">1</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Objetivos generales</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Cumplimiento de metas en Meta &middot; corte al 07/07</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">2</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Objetivo principal: reduccion de CPA</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Proyeccion Abril &ndash; Diciembre 2026</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">3</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Resultados mes a mes</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Real vs. objetivo, Abril a la fecha</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">4</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Contexto y objetivo</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Por que sumar Search y TikTok a la cuenta</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">5</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Universo digital &mdash; Colombia 2026</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Tamano del terreno de juego</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">6</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Por que TikTok</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Contenido y reach incremental</div></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">7</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Por que Google Search</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Intencion de busqueda</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">8</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Presupuesto adicional</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Inversion incremental, sin afectar Meta</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--yellow); color:var(--black); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">9</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Flow de medios: inversion</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Presupuesto y KPI principal por linea</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--yellow); color:var(--black); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">10</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Flow de medios: costos y resultados</div><div style="font-size:9px; color:var(--t3); font-weight:300;">CPA / CPM / CPC y resultados esperados</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--yellow); color:var(--black); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">11</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Flow de medios: brief por linea</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Audiencia y mensaje por canal</div></div>
+        </div>
+        <div class="card bar-left" style="display:flex; align-items:center; gap:12px; padding:10px 14px;">
+          <div style="width:26px;height:26px;border-radius:50%; background:var(--black); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex-shrink:0;">12</div>
+          <div><div style="font-size:11.5px; font-weight:700; color:var(--t2);">Cierre</div><div style="font-size:9px; color:var(--t3); font-weight:300;">Resumen ejecutivo</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-index"></div>
+</div>`);
+
+/* ---------- SLIDE GEN -- OBJETIVOS GENERALES (PAUTA META) ---------- */
+slides.push(`
+<div class="slide">
+  ${header("Objetivos <b>generales</b> &mdash; <i>Pauta Meta</i>", "Corte al 07/07")}
+  <div class="subtitle">Cumplimiento de las metas trazadas para la cuenta y resultados con corte al 07/07 en Meta &mdash; el punto de partida antes de sumar Search y TikTok.</div>
+  <div class="content">
+    <div class="kpi-row" style="grid-auto-columns:1fr; display:grid; grid-template-columns:repeat(3,1fr);">
+      <div class="goal-card">
+        <div class="glabel">Inversion</div>
+        <div class="gvalues">$2.646.606 <span class="of-target">de $6.000.000</span></div>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:44.1%;"></div></div>
+        <div class="goal-foot"><span>44.1% del objetivo</span><span class="pct good">+177.7% vs. periodo anterior</span></div>
+      </div>
+      <div class="goal-card">
+        <div class="glabel">CTR</div>
+        <div class="gvalues">2.65% <span class="of-target">de 2.00%</span></div>
+        <div class="goal-bar-track"><div class="goal-bar-fill good" style="width:100%;"></div></div>
+        <div class="goal-foot"><span class="pct good">132.4% &mdash; meta superada</span><span>-46% vs. periodo anterior</span></div>
+      </div>
+      <div class="goal-card">
+        <div class="glabel">CAC</div>
+        <div class="gvalues">$75.800 <span class="of-target">de $70.000</span></div>
+        <div class="goal-bar-track"><div class="goal-bar-fill bad" style="width:100%;"></div></div>
+        <div class="goal-foot"><span class="pct bad">108.3% del objetivo</span><span>Levemente por encima de la meta</span></div>
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-box pos"><div class="n">31</div><div class="l">Creditos exitosos</div><div class="s">Corte al 07/07</div></div>
+      <div class="stat-box pos"><div class="n">41.036</div><div class="l">Alcance</div><div class="s">+172% vs. periodo anterior</div></div>
+      <div class="stat-box pos"><div class="n">3.257</div><div class="l">Visitas al sitio</div><div class="s">+68% vs. periodo anterior</div></div>
+      <div class="stat-box pos"><div class="n">$10.48M</div><div class="l">Valor en creditos</div><div class="s">+140% vs. periodo anterior</div></div>
+    </div>
+    <div class="card" style="display:flex; flex-direction:column;">
+      <div class="panel-title"><span class="dot"></span>Desempeno por campana (corte al 07/07)</div>
+      <table class="cmp">
+        <tr><th>Campana</th><th>Alcance</th><th>% &Delta;</th><th>Clics enlace</th><th>% &Delta;</th><th class="highlight">Creditos exito</th><th>% &Delta;</th></tr>
+        <tr><td>4. Solicitud credito</td><td>35.228</td><td class="green">+315.0%</td><td>2.383</td><td class="green">+162.4%</td><td class="highlight">10</td><td class="green">+150.0%</td></tr>
+        <tr><td>3. Inicio inscripcion</td><td>9.128</td><td class="green">+10.0%</td><td>874</td><td>-12.8%</td><td class="highlight">2</td><td>0.0%</td></tr>
+      </table>
+    </div>
+    <div class="insight">
+      <p>Con corte al <b>07/07</b>, el CAC esta practicamente en linea con la meta ($75.800 vs. $70.000) y la cuenta ya acumula <b>31 creditos exitosos</b>, con alcance (+172%) y visitas (+68%) creciendo con fuerza frente al periodo anterior &mdash; la base esta lista para escalar con Search y TikTok.</p>
+    </div>
+  </div>
+  <div class="slide-index"></div>
+</div>`);
+
+/* ---------- SLIDE OBJ-1 -- OBJETIVO PRINCIPAL: REDUCCION DE CPA ---------- */
+slides.push(`
+<div class="slide">
+  ${header("Objetivo principal de la cuenta: <b>reduccion de CPA</b>", "Proyeccion Abr &ndash; Dic 2026 &middot; USD")}
+  <div class="subtitle">Antes de hablar de nuevos canales, recordamos el objetivo que ha guiado la cuenta de RIS desde abril: bajar el costo por conversion mes a mes con un presupuesto creciente.</div>
+  <div class="content">
+    <div class="kpi-row">
+      <div class="card bar-bottom kpi">
+        <div class="num">$47</div>
+        <div class="lbl">CPA inicial</div>
+        <div class="sub">Abril 2026</div>
+      </div>
+      <div class="card bar-bottom kpi">
+        <div class="num">$12</div>
+        <div class="lbl">CPA meta</div>
+        <div class="sub">Diciembre 2026</div>
+      </div>
+      <div class="card bar-bottom kpi">
+        <div class="num">$2,331</div>
+        <div class="lbl">Presupuesto dic.</div>
+        <div class="sub">vs. $1,578 inicial (+48%)</div>
+      </div>
+      <div class="card bar-bottom kpi">
+        <div class="num">194</div>
+        <div class="lbl">Conversiones dic.</div>
+        <div class="sub">vs. 34 en abril (+471%)</div>
+      </div>
+    </div>
+    <div class="card" style="display:flex; flex-direction:column; flex:1;">
+      <div class="panel-title"><span class="dot"></span>Evolucion mensual proyectada: CPA (USD) y conversiones</div>
+      <div style="display:flex; align-items:flex-end; gap:6px; flex:1; padding:6px 4px 0;">
+        
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$47</div>
+        <div style="width:60%; height:100.0%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Abr</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">34 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$40</div>
+        <div style="width:60%; height:85.1%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">May</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">42 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$33</div>
+        <div style="width:60%; height:70.2%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Jun</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">52 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$28</div>
+        <div style="width:60%; height:59.6%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Jul</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">65 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$24</div>
+        <div style="width:60%; height:51.1%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Ago</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">81 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$20</div>
+        <div style="width:60%; height:42.6%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Sep</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">101 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$17</div>
+        <div style="width:60%; height:36.2%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Oct</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">125 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$14</div>
+        <div style="width:60%; height:29.8%; background:var(--black); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Nov</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">156 conv.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;">
+        <div style="font-size:7.5px; font-weight:700; color:var(--t2); margin-bottom:3px;">$12</div>
+        <div style="width:60%; height:25.5%; background:var(--yellow); border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:7.5px; color:var(--t3); margin-top:4px; font-weight:600;">Dic</div>
+        <div style="font-size:6.5px; color:var(--t3); font-weight:300;">194 conv.</div>
+      </div>
+      </div>
+    </div>
+    <div class="insight">
+      <p>El objetivo trazado para la cuenta es bajar el CPA <b>-74%</b> (de $47 a $12) entre abril y diciembre, con presupuesto creciendo solo <b>+5% mensual</b> &mdash; el resultado es casi <b>6x mas conversiones</b> con el mismo ritmo de inversion.</p>
+    </div>
+  </div>
+  <div class="slide-index"></div>
+</div>`);
+
+/* ---------- SLIDE OBJ-2 -- RESULTADOS MES A MES (PENDIENTE) ---------- */
+slides.push(`
+<div class="slide">
+  ${header("Resultados <b>mes a mes</b>", "Abril &ndash; a la fecha")}
+  <div class="subtitle">Seguimiento real de la cuenta frente al objetivo de CPA trazado &mdash; listo para completar con las cifras reales de cada mes.</div>
+  <div class="content" style="flex:1;">
+    <div class="kpi-row">
+      <div class="card bar-bottom kpi">
+        <div class="num" style="color:var(--green);">$28.82</div>
+        <div class="lbl">CPA real promedio</div>
+        <div class="sub">Abr &ndash; Jul (corte 07/07)</div>
+      </div>
+      <div class="card bar-bottom kpi">
+        <div class="num">$37.00</div>
+        <div class="lbl">CPA objetivo promedio</div>
+        <div class="sub">Mismo periodo</div>
+      </div>
+      <div class="card bar-bottom kpi">
+        <div class="num" style="color:var(--green);">-22.1%</div>
+        <div class="lbl">Vs. objetivo</div>
+        <div class="sub">CPA real por debajo de la meta</div>
+      </div>
+      <div class="card bar-bottom kpi">
+        <div class="num">$3,900</div>
+        <div class="lbl">TRM aplicada</div>
+        <div class="sub">COP / USD</div>
+      </div>
+    </div>
+    <div class="card" style="display:flex; flex-direction:column; flex:1;">
+      <div class="panel-title"><span class="dot"></span>Real vs. objetivo (Abril &ndash; Julio 2026)</div>
+      <table class="cmp">
+        <tr><th>Mes</th><th>CPA real (COP)</th><th>CPA real (USD)</th><th class="highlight">CPA objetivo (USD)</th><th>Vs. meta</th></tr>
+        <tr><td>Abril</td><td>$170,732</td><td>$43.78</td><td class="highlight">$47.00</td><td class="green">-6.9%</td></tr>
+        <tr><td>Mayo <span style="color:var(--t3); font-weight:300;">(promedio Abr-Jun)</span></td><td>$124,566</td><td>$31.94</td><td class="highlight">$40.00</td><td class="green">-20.1%</td></tr>
+        <tr><td>Junio</td><td>$78,400</td><td>$20.10</td><td class="highlight">$33.00</td><td class="green">-39.1%</td></tr>
+        <tr><td>Julio <span style="color:var(--t3); font-weight:300;">(corte 07/07)</span></td><td>$75,800</td><td>$19.44</td><td class="highlight">$28.00</td><td class="green">-30.6%</td></tr>
+      </table>
+    </div>
+    <div class="insight">
+      <p>El CPA real ha estado <b>por debajo del objetivo los 4 meses</b>, con una brecha que se amplia mes a mes: de <b>-6.9%</b> en abril a <b>-39.1%</b> en junio &mdash; la cuenta esta superando la meta de eficiencia trazada.</p>
+    </div>
+  </div>
+  <div class="slide-index"></div>
+</div>`);
+
 /* ---------- SLIDE 1 -- CONTEXTO Y OBJETIVO ---------- */
 slides.push(`
 <div class="slide">
@@ -496,7 +788,7 @@ slides.push(`
       <p><b>Objetivo:</b> diversificar el mix de medios de RIS para capturar demanda que Meta no esta capturando hoy -- sin poner en riesgo el desempeno actual.</p>
     </div>
   </div>
-  <div class="slide-index">01</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 2 -- UNIVERSO DIGITAL ---------- */
@@ -552,7 +844,7 @@ slides.push(`
       <p>El alcance de TikTok en Colombia crecio <b>+24.9% en un ano</b>, frente a <b>+0.7%</b> de Facebook y <b>+7.7%</b> de Instagram -- la oportunidad de reach incremental mas grande del mercado hoy esta fuera de Meta.</p>
     </div>
   </div>
-  <div class="slide-index">02</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 3 -- POR QUE TIKTOK ---------- */
@@ -589,7 +881,7 @@ slides.push(`
       <p>TikTok no reemplaza a Meta: <b>suma un publico que hoy no se esta alcanzando</b> y genera el volumen de descubrimiento que despues Search puede convertir.</p>
     </div>
   </div>
-  <div class="slide-index">03</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 4 -- POR QUE SEARCH ---------- */
@@ -626,7 +918,7 @@ slides.push(`
       <p>Search sigue siendo el canal <b>#1 de descubrimiento e investigacion de marca</b> a nivel global -- dejar ese espacio libre es dejarle la demanda de alta intencion a la competencia.</p>
     </div>
   </div>
-  <div class="slide-index">04</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 5 -- PRESUPUESTO ADICIONAL ---------- */
@@ -682,7 +974,7 @@ slides.push(`
       <p>El presupuesto adicional funciona como una <b>capa de crecimiento</b>, no como un reemplazo -- Meta sigue siendo la base y Search + TikTok se prueban con recursos nuevos.</p>
     </div>
   </div>
-  <div class="slide-index">05</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 6 -- FLOW DE MEDIOS: INVERSION ---------- */
@@ -745,7 +1037,7 @@ slides.push(`
       <p>Flight de <b>1 mes</b> pensado como fase de prueba: valida CPA y CPC reales antes de decidir el escalamiento del presupuesto incremental descrito en la seccion anterior.</p>
     </div>
   </div>
-  <div class="slide-index">06</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 6B -- FLOW DE MEDIOS: COSTOS Y RESULTADOS ---------- */
@@ -789,7 +1081,7 @@ slides.push(`
       <p>Cada linea reporta <b>los tres costos</b> (CPA / CPM / CPC) aunque solo uno sea su KPI principal (resaltado en amarillo) &mdash; asi comparamos eficiencia real entre lineas, no solo contra su propia meta.</p>
     </div>
   </div>
-  <div class="slide-index">07</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 6B -- FLOW DE MEDIOS: AUDIENCIA Y MENSAJE ---------- */
@@ -831,7 +1123,7 @@ slides.push(`
       <p>Las dos lineas de <b>Search</b> (Google y TikTok) comparten el mismo mensaje de credibilidad orientado a conversion; <b>TikTok Infeed</b> usa un mensaje mas directo, orientado a accion inmediata para generar trafico calificado.</p>
     </div>
   </div>
-  <div class="slide-index">08</div>
+  <div class="slide-index"></div>
 </div>`);
 
 /* ---------- SLIDE 9 -- CIERRE ---------- */
@@ -847,6 +1139,11 @@ slides.push(`
 </div>`);
 
 document.getElementById('deck').innerHTML = slides.join("\n");
+
+document.querySelectorAll('#deck .slide:not(.dark) .slide-index').forEach((el,i)=>{
+  el.textContent = String(i+1).padStart(2,'0');
+});
+
 </script>
 </body>
 </html>
